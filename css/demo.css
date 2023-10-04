@@ -1,0 +1,177 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 35px;
+  background: linear-gradient(to left top, #52caca, green);
+}
+.wrapper {
+  max-width: 1100px;
+  width: 100%;
+  position: relative;
+}
+.wrapper i {
+  height: 50px;
+  width: 50px;
+  background-color: white;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 98%;
+  transform: translateY(-50%);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+.wrapper i:first-child {
+  left: -22px;
+}
+.wrapper i:last-child {
+  right: -22px;
+}
+.wrapper .caraousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((75% / 3) - 12px);
+  gap: 16px;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+.caraousel :where(.card, .img) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.caraousel.dragging {
+  cursor: grabbing !important ;
+  user-select: none;
+  scroll-behavior: auto;
+}
+.caraousel .card {
+  height: 342px;
+  list-style: none;
+  background: #fff;
+  border-radius: 8px;
+  /* display: flex; */
+  padding-bottom: 15px;
+  /* align-items: center; */
+  /* justify-content: center; */
+  flex-direction: column;
+}
+.card .img {
+  background: #52caca;
+  width: 148px;
+  height: 148px;
+  /* border-radius: 50%; */
+  border: px solid white;
+}
+.card .img img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+}
+
+.card h2 {
+  font-weight: 500;
+  font-size: 1.56rem;
+  margin: 30px 0 5px;
+}
+.card span {
+  color: blueviolet;
+  font-size: 1.31rem;
+}
+/* Card */
+div.pro-card-us {
+  height: 350px;
+  /* transform: translate(-10%, 10%) translateZ(0); */
+  border-radius: 3px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+div.pro-card-us .thumb-us {
+  width: auto;
+  height: 260px;
+  background: url(sick.jpg) no-repeat center;
+  background: no-repeat center;
+  background-size: cover;
+  border-radius: 3px;
+}
+div.pro-card-us .infos-us {
+  width: auto;
+  height: 350px;
+  /* position: relative; */
+  padding: 14px 24px;
+  background: #fff;
+  transition: 0.4s 0.15s cubic-bezier(0.17, 0.67, 0.5, 1.03);
+}
+div.pro-card-us .infos-us .title-us {
+  /* position: relative; */
+  margin: 10px 0;
+  letter-spacing: 3px;
+  color: #152536;
+  font-family: "Grotesque Black", sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  text-shadow: 0 0 0px #32577f;
+}
+div.pro-card-us .infos-us .flag {
+  /* position: absolute; */
+  /* top: 50%; */
+  right: 0;
+  transform: translateY(-50%);
+  width: 35px;
+  height: 23px;
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/397014/flag.png")
+    no-repeat top right;
+  background-size: 100% auto;
+  display: inline-block;
+}
+div.pro-card-us .infos-us .date,
+div.pro-card-us .infos-us .seats-us {
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: rgba(21, 37, 54, 0.7);
+  font-family: "Grotesque", sans-serif;
+}
+div.pro-card-us .infos-us .seats-us {
+  display: inline-block;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: 0.5s 0.25s cubic-bezier(0.17, 0.67, 0.5, 1.03);
+}
+div.pro-card-us .infos-us .txt-us {
+  font-family: "Merriweather", sans-serif;
+  line-height: 2;
+  font-size: 0.95rem;
+  color: rgba(21, 37, 54, 0.7);
+  opacity: 0;
+  transition: 0.5s 0.25s cubic-bezier(0.17, 0.67, 0.5, 1.03);
+}
+div.pro-card-us .infos-us .details-us {
+  /* position: absolute; */
+  left: 0;
+  left: 0;
+  bottom: 0;
+  margin: 0px 0;
+  padding: 0px 0px;
+  letter-spacing: 1px;
+  color: #4e958b;
+  font-family: "Grotesque Black", sans-serif;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  opacity: 0;
+  transition: 0.5s 0.25s cubic-bezier(0.17, 0.67, 0.5, 1.03);
+}
+div.pro-card-us:hover .infos-us {
+  transform: translateY(-260px);
+}
+div.pro-card-us:hover .infos-us .seats-us,
+div.pro-card-us:hover .infos-us .txt-us,
+div.pro-card-us:hover .infos-us .details-us {
+  opacity: 1;
+}
